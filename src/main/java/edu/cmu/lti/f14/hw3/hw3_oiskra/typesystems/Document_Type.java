@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Fri Oct 11 01:58:03 EDT 2013 */
+/* First created by JCasGen Wed Oct 22 21:33:04 EDT 2014 */
 package edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems;
 
 import org.apache.uima.jcas.JCas;
@@ -14,13 +14,15 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Fri Oct 11 01:58:03 EDT 2013
- * @generated */
+ * Updated by JCasGen Wed Oct 22 21:33:04 EDT 2014
+ *  */
 public class Document_Type extends Annotation_Type {
-  /** @generated */
+  /**  
+   * @return the generator for this type
+   */
   @Override
   protected FSGenerator getFSGenerator() {return fsGenerator;}
-  /** @generated */
+  /**  */
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
@@ -36,25 +38,31 @@ public class Document_Type extends Annotation_Type {
         } else return new Document(addr, Document_Type.this);
   	  }
     };
-  /** @generated */
+  /**  */
   @SuppressWarnings ("hiding")
   public final static int typeIndexID = Document.typeIndexID;
-  /** @generated 
-     @modifiable */
+  /**  
+      */
   @SuppressWarnings ("hiding")
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
  
-  /** @generated */
+  /**  */
   final Feature casFeat_relevanceValue;
-  /** @generated */
+  /**  */
   final int     casFeatCode_relevanceValue;
-  /** @generated */ 
+  /** 
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
   public int getRelevanceValue(int addr) {
         if (featOkTst && casFeat_relevanceValue == null)
       jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
     return ll_cas.ll_getIntValue(addr, casFeatCode_relevanceValue);
   }
-  /** @generated */    
+  /** 
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
   public void setRelevanceValue(int addr, int v) {
         if (featOkTst && casFeat_relevanceValue == null)
       jcas.throwFeatMissing("relevanceValue", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
@@ -62,17 +70,23 @@ public class Document_Type extends Annotation_Type {
     
   
  
-  /** @generated */
+  /**  */
   final Feature casFeat_queryID;
-  /** @generated */
+  /**  */
   final int     casFeatCode_queryID;
-  /** @generated */ 
+  /** 
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
   public int getQueryID(int addr) {
         if (featOkTst && casFeat_queryID == null)
       jcas.throwFeatMissing("queryID", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
     return ll_cas.ll_getIntValue(addr, casFeatCode_queryID);
   }
-  /** @generated */    
+  /** 
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
   public void setQueryID(int addr, int v) {
         if (featOkTst && casFeat_queryID == null)
       jcas.throwFeatMissing("queryID", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
@@ -80,17 +94,23 @@ public class Document_Type extends Annotation_Type {
     
   
  
-  /** @generated */
+  /**  */
   final Feature casFeat_text;
-  /** @generated */
+  /**  */
   final int     casFeatCode_text;
-  /** @generated */ 
+  /** 
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
   public String getText(int addr) {
         if (featOkTst && casFeat_text == null)
       jcas.throwFeatMissing("text", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
     return ll_cas.ll_getStringValue(addr, casFeatCode_text);
   }
-  /** @generated */    
+  /** 
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
   public void setText(int addr, String v) {
         if (featOkTst && casFeat_text == null)
       jcas.throwFeatMissing("text", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
@@ -98,28 +118,61 @@ public class Document_Type extends Annotation_Type {
     
   
  
-  /** @generated */
+  /**  */
   final Feature casFeat_tokenList;
-  /** @generated */
+  /**  */
   final int     casFeatCode_tokenList;
-  /** @generated */ 
+  /** 
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
   public int getTokenList(int addr) {
         if (featOkTst && casFeat_tokenList == null)
       jcas.throwFeatMissing("tokenList", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
     return ll_cas.ll_getRefValue(addr, casFeatCode_tokenList);
   }
-  /** @generated */    
+  /** 
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
   public void setTokenList(int addr, int v) {
         if (featOkTst && casFeat_tokenList == null)
       jcas.throwFeatMissing("tokenList", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
     ll_cas.ll_setRefValue(addr, casFeatCode_tokenList, v);}
     
   
+ 
+  /**  */
+  final Feature casFeat_cosineSimilarity;
+  /**  */
+  final int     casFeatCode_cosineSimilarity;
+  /** 
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public double getCosineSimilarity(int addr) {
+        if (featOkTst && casFeat_cosineSimilarity == null)
+      jcas.throwFeatMissing("cosineSimilarity", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
+    return ll_cas.ll_getDoubleValue(addr, casFeatCode_cosineSimilarity);
+  }
+  /** 
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setCosineSimilarity(int addr, double v) {
+        if (featOkTst && casFeat_cosineSimilarity == null)
+      jcas.throwFeatMissing("cosineSimilarity", "edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document");
+    ll_cas.ll_setDoubleValue(addr, casFeatCode_cosineSimilarity, v);}
+    
+  
 
 
 
   /** initialize variables to correspond with Cas Type and Features
-	* @generated */
+	 * 
+	 * @param jcas JCas
+	 * @param casType Type 
+	 */
   public Document_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
@@ -139,6 +192,10 @@ public class Document_Type extends Annotation_Type {
  
     casFeat_tokenList = jcas.getRequiredFeatureDE(casType, "tokenList", "uima.cas.FSList", featOkTst);
     casFeatCode_tokenList  = (null == casFeat_tokenList) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tokenList).getCode();
+
+ 
+    casFeat_cosineSimilarity = jcas.getRequiredFeatureDE(casType, "cosineSimilarity", "uima.cas.Double", featOkTst);
+    casFeatCode_cosineSimilarity  = (null == casFeat_cosineSimilarity) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_cosineSimilarity).getCode();
 
   }
 }

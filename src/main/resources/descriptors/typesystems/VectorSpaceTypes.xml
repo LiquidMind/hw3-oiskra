@@ -31,6 +31,11 @@
           <rangeTypeName>uima.cas.FSList</rangeTypeName>
           <elementType>edu.cmu.vector_space.typesystems.Token</elementType>
         </featureDescription>
+        <featureDescription>
+          <name>cosineSimilarity</name>
+          <description/>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>        
       </features>
     </typeDescription>
     <typeDescription>

@@ -8,6 +8,9 @@ import org.apache.uima.jcas.JCas;
 
 import edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document;
 
+/*
+ * Reads all sentences from the input file and save them in the separate CASes
+ */
 
 public class DocumentReader 
 extends JCasAnnotator_ImplBase  {
@@ -38,6 +41,9 @@ extends JCasAnnotator_ImplBase  {
 		//Setting relevance value
 		doc.setRelevanceValue(rel);
 		doc.addToIndexes();
+		
+		// Print read data just to check it 
+		// System.out.println(qid + "/" + rel + ": " + txt);
 		
 		//Adding populated FeatureStructure to CAS
 		jcas.addFsToIndexes(doc);

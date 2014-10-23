@@ -11,7 +11,12 @@ import org.apache.uima.jcas.cas.StringArray;
 import org.apache.uima.jcas.tcas.Annotation;
 
 import edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Document;
+import edu.cmu.lti.f14.hw3.hw3_oiskra.typesystems.Token;
+import edu.cmu.lti.f14.hw3.hw3_oiskra.utils.Utils;
 
+/*
+ * Uses sentences loaded by DocumentReader, splits them into tokens, and creates sparse vector
+ */
 public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
@@ -51,10 +56,38 @@ public class DocumentVectorAnnotator extends JCasAnnotator_ImplBase {
 
 		String docText = doc.getText();
 		
-		//TO DO: construct a vector of tokens and update the tokenList in CAS
-    //TO DO: use tokenize0 from above 
+		// Get tokens list using standard tokenizer0
+		List<String> stringList = tokenize0(docText);
+    
+		// Save data into HashMap
+		HashMap<String, Integer> frequencies = new HashMap<String, Integer>();
 		
-
+		for (String text:stringList) {
+		  if(frequencies.containsKey(text))
+      {
+		    // Increase frequency of the term
+		    frequencies.put(text, frequencies.get(text) + 1);
+      }
+      else {
+        // Set initial terms frequency to 1
+        frequencies.put(text, 1);
+      }
+		}
+		
+		// Convert found parts to the tokens and add them to the CAS
+		List<Token> tokenList = new ArrayList<Token>();
+		
+		for(String text:frequencies.keySet())
+    {
+      Token token = new Token(jcas);
+      token.setText(text);
+      token.setFrequency(frequencies.get(text));
+      tokenList.add(token);
+      
+      // Print tokens just to see if all is OK
+      //System.out.println(text + " - " + frequencies.get(text));
+    }
+    doc.setTokenList(Utils.fromCollectionToFSList(jcas, tokenList));
 	}
 
 }
